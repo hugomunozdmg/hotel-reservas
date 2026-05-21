@@ -9,7 +9,8 @@ function getRooms() {
   fetch("http://localhost:3000/api/habitaciones")
     .then((res) => res.json())
     .then((data) => {
-      data.data.forEach((room) => {
+      const sortRooms = data.data.sort((a, b) => a.numero - b.numero);
+      sortRooms.forEach((room) => {
         document.getElementById("rooms-list").innerHTML += `
             <div class='room'>
             <p class='room-number'>Número: ${room.numero}</p>
