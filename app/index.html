@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        background-color: #ccc;
+      }
+
+      .room,
+      .client,
+      #client-register {
+        border: 1px solid black;
+        border-radius: 0.5ch;
+        padding: 0.5ch;
+        margin: 0.5ch;
+        color: white;
+      }
+
+      .client,
+      #client-register {
+        color: black;
+      }
+
+      .room-number {
+        color: black;
+      }
+
+      .available {
+        background-color: green;
+      }
+
+      .not-available {
+        background-color: red;
+      }
+
+      .estate {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header><h1>Hotel</h1></header>
+    <main>
+      <section id="clients">
+        <div><h2>Clientes</h2></div>
+        <div id="client-register">
+          <h3>Registrar cliente:</h3>
+          <div>
+            <label for="">Nombre:</label>
+            <input type="text" />
+          </div>
+          <div>
+            <label for="">Apellido:</label>
+            <input type="text" />
+          </div>
+          <div>
+            <label for="">DNI:</label>
+            <input type="text" />
+          </div>
+          <button>registrar</button>
+        </div>
+        <div>
+          <label for="clients-search">Buscar cliente:</label>
+          <input id="clients-search" />
+          <div id="clients-list"></div>
+        </div>
+      </section>
+      <section id="rooms">
+        <div><h2>Habitaciones</h2></div>
+        <div id="rooms-list"></div>
+      </section>
+
+      <section id="reservations"></section>
+    </main>
+  </body>
+  <script src="index.js"></script>
+</html>

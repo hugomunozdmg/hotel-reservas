@@ -10,6 +10,17 @@ router.get("/", async (req, res) => {
   res.send({ data: clients });
 });
 
+router.post("/buscar", async (req, res) => {
+  const clients = await req.app.locals.db
+    .collection("clientes")
+    .find({nombre:{
+      $regex: req.body.name,
+      $options: "i"
+    }})
+    .toArray();
+  res.send({ data: clients });
+});
+
 router.post("/registrar-cliente", async (req, res) => {
   let newClient = req.body;
   let response;
