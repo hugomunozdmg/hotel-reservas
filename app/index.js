@@ -47,3 +47,28 @@ function searchClients(name) {
       });
   }
 }
+
+function registerClient() {
+  const name = document.getElementById("input-name").value;
+  const surname = document.getElementById("input-surname").value;
+  const dni = document.getElementById("input-dni").value;
+
+  fetch(`http://localhost:3000/api/clientes/registrar-cliente`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ nombre: name, apellido: surname, dni: dni }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      if (data.data.insertedId) {
+        document.getElementById("register-message").innerText =
+          "usuario registrado";
+        setTimeout(() => {
+          document.getElementById("register-message").innerText = "";
+        }, 2000);
+      }
+    });
+}

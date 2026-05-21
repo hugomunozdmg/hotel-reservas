@@ -28,6 +28,10 @@
         color: black;
       }
 
+      #register-message {
+        color: red
+      }
+
       .available {
         background-color: green;
       }
@@ -50,17 +54,18 @@
           <h3>Registrar cliente:</h3>
           <div>
             <label for="">Nombre:</label>
-            <input type="text" />
+            <input type="text" id="input-name"/>
           </div>
           <div>
             <label for="">Apellido:</label>
-            <input type="text" />
+            <input type="text" id="input-surname"/>
           </div>
           <div>
             <label for="">DNI:</label>
-            <input type="text" />
+            <input type="text" id="input-dni"/>
           </div>
-          <button>registrar</button>
+          <button onclick="registerClient()">registrar</button>
+          <div><p id="register-message"></p></div>
         </div>
         <div>
           <label for="clients-search">Buscar cliente:</label>
