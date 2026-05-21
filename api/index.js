@@ -24,5 +24,4 @@ async function start() {
 
 start();
 
-
 app.listen(3000 || process.env.PORT);
